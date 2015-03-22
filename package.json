@@ -1,0 +1,33 @@
+{
+  "name": "fly-js",
+  "version": "0.0.0",
+  "description": "A JavaScript utility library focusing on aviation",
+  "main": "fly.js",
+  "scripts": {
+    "test": "mocha -C test"
+  },
+  "keywords": [
+    "Aviation",
+    "Great",
+    "Circle",
+    "Rhumb",
+    "Line",
+    "Naviagtion",
+    "Longitude",
+    "Latitude",
+    "Course",
+    "Weather",
+    "True",
+    "Air",
+    "Speed",
+    "Wind",
+    "Triangles"
+  ],
+  "repository": "https://github.com/rheh/fly-js.git",
+  "author": "Ray Hammond",
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "^2.1.2",
+    "mocha": "^2.2.1"
+  }
+}
