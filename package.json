@@ -4,7 +4,7 @@
   "description": "A JavaScript utility library focusing on aviation",
   "main": "fly.js",
   "scripts": {
-    "test": "mocha -C test"
+    "test": "mocha --no-colors --recursive test"
   },
   "keywords": [
     "Aviation",
