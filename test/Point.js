@@ -39,8 +39,8 @@ describe('#Point object works', function() {
             var london = new Point(new Latitude(51.5072), new Longitude(-0.1265));
             var newyork = new Point(new Latitude(40.7127), new Longitude(-74.0059));
 
-            var distanceBetween = 3005.702766131842;
-            london.distanceTo(newyork).should.equal(distanceBetween);
+            var distanceBetween = 3005.70;
+            london.distanceTo(newyork, 2).should.equal(distanceBetween);
         });
 
         it('Calculates the distance bewteen Flugplatz Birrfeld and APS Taxi Qualitat Flughafen', function() {
