@@ -1,0 +1,11 @@
+language: node_js
+node_js:
+  - "0.12"
+git:
+  depth: 10
+branches:
+  only:
+    - master
+before_install:
+  - "nvm use $TRAVIS_NODE_VERSION"
+  - "npm config set loglevel error"
