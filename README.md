@@ -1,7 +1,8 @@
-# fly-js v0.0.1
-A JavaScript utility library focusing on aviation
+# fly-js v0.0.2
+A JavaScript utility library focusing on aviation.
 
 ## Usage in nodejs
+
 var fly = require('fly');
 
 ## Examples
