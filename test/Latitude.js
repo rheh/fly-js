@@ -35,7 +35,7 @@ describe('#Latitude object works', function() {
             var latitude = new Latitude(degrees);
 
             latitude.isNorth().should.equal(true);
-            latitude.isEqualtor().should.equal(false);
+            latitude.isEquator().should.equal(false);
             latitude.isSouth().should.equal(false);
         });
 
@@ -44,7 +44,7 @@ describe('#Latitude object works', function() {
             var latitude = new Latitude(degrees);
 
             latitude.isNorth().should.equal(false);
-            latitude.isEqualtor().should.equal(true);
+            latitude.isEquator().should.equal(true);
             latitude.isSouth().should.equal(false);
         });
 
@@ -53,7 +53,7 @@ describe('#Latitude object works', function() {
             var latitude = new Latitude(degrees);
 
             latitude.isNorth().should.equal(false);
-            latitude.isEqualtor().should.equal(false);
+            latitude.isEquator().should.equal(false);
             latitude.isSouth().should.equal(true);
         });
     });

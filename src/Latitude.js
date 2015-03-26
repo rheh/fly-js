@@ -29,7 +29,7 @@ Latitude.prototype.isNorth = function () {
     return this.degrees > 0;
 }
 
-Latitude.prototype.isEqualtor = function () {
+Latitude.prototype.isEquator = function () {
     return this.degrees === 0;
 }
 
