@@ -1,6 +1,8 @@
 # fly-js v0.0.2
 A JavaScript utility library focusing on aviation.
 
+<img src='https://travis-ci.org/rheh/fly-js.svg?branch=master'>
+
 ## Usage in nodejs
 
 var fly = require('fly');
