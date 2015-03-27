@@ -1,3 +1,4 @@
+/*jslint node: true */
 "use strict";
 
 function round (value, places) {
@@ -16,7 +17,7 @@ AngleHelper.prototype.degToRad = function (degrees, roundTo) {
     }
 
     return round(degrees * (Math.PI / 180), places);
-}
+};
 
 AngleHelper.prototype.radToDeg = function (radians, roundTo) {
 
@@ -27,6 +28,6 @@ AngleHelper.prototype.radToDeg = function (radians, roundTo) {
     }
 
     return round(radians * (180 / Math.PI), places);
-}
+};
 
 module.exports = AngleHelper;

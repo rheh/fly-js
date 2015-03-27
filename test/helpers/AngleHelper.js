@@ -6,11 +6,11 @@ var should = chai.should(),
 
 var AngleHelper = require('../../src/helpers/AngleHelper');
 
-describe('#Angle helper object works', function() {
+describe('#Angle helper object works', function () {
 
     describe('Conversions', function () {
 
-        it('Converts degrees to radians', function() {
+        it('Converts degrees to radians', function () {
 
             var degrees = 90;
             var expected_result = 1.57079633;
@@ -19,7 +19,7 @@ describe('#Angle helper object works', function() {
             angleHelper.degToRad(degrees, 8).should.equal(expected_result);
         });
 
-        it('Converts radians to degrees', function() {
+        it('Converts radians to degrees', function () {
 
             var radians = 1.66661;
             var expected_result = 95.4897191;
@@ -29,4 +29,4 @@ describe('#Angle helper object works', function() {
         });
 
     });
-})
+});

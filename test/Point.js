@@ -56,7 +56,7 @@ describe('#Point object works', function() {
 
             var northPole = new Point(new Latitude(90.00), new Longitude(0.00));
 
-            var distanceBetween = 0.00
+            var distanceBetween = 0.00;
             northPole.distanceTo(northPole, 2).should.equal(distanceBetween);
         });
 
@@ -77,7 +77,7 @@ describe('#Point object works', function() {
             var london = new Point(new Latitude(51.5072), new Longitude(-0.1265));
             var newyork = new Point(new Latitude(40.7127), new Longitude(-74.0059));
 
-            var course = 308.79
+            var course = 308.79;
             london.trueCourse(newyork, 2).should.equal(course);
         });
 
@@ -107,4 +107,4 @@ describe('#Point object works', function() {
             northPole.trueCourse(southPole, 2).should.equal(course);
         });
     });
-})
+});

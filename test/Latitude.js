@@ -57,4 +57,4 @@ describe('#Latitude object works', function() {
             latitude.isSouth().should.equal(true);
         });
     });
-})
+});

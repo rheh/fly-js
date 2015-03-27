@@ -1,8 +1,9 @@
+/*jslint node: true */
 "use strict";
 
 var Latitude = require('../src/Latitude');
 var Longitude = require('../src/Longitude');
-var AngleHelper = require('../src/helpers/AngleHelper')
+var AngleHelper = require('../src/helpers/AngleHelper');
 
 function round (value, places) {
     return Math.round(value * Math.pow(10, places)) / Math.pow(10, places);
@@ -20,7 +21,7 @@ var Point = function (latitude, longitude) {
 
     this.latitude = latitude;
     this.longitude = longitude;
-}
+};
 
 Point.prototype.distanceTo = function (to, roundTo) {
 
@@ -69,7 +70,6 @@ Point.prototype.trueCourse = function (to, roundTo) {
     var lat1 = to.latitude.getRadians();
     var lon1 = to.longitude.getRadians();
 
-    var angle = new AngleHelper();
     var trueCourse = NaN;
 
     if (Math.cos(lat1) < 0.001) {
@@ -96,6 +96,6 @@ Point.prototype.trueCourse = function (to, roundTo) {
     var angle = new AngleHelper();
 
     return angle.radToDeg(trueCourse, roundTo);
-}
+};
 
 module.exports = Point;

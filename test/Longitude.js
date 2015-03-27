@@ -57,4 +57,4 @@ describe('#Longitude object works', function() {
             longitude.isEast().should.equal(true);
         });
     });
-})
+});
