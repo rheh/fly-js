@@ -1,22 +1,36 @@
 /*jslint node: true */
 "use strict";
 
-var AngleHelper = require('../src/helpers/AngleHelper');
+var AngleConverter = require('../src/helpers/converters/AngleConverter');
 
 var validate = function (degrees) {
     return degrees >= -180.00 && degrees <= 180.00;
 };
 
 var Longitude = function (degrees) {
+    this.setDegrees(degrees);
+};
+
+Longitude.prototype.setDegrees = function (degrees) { 
+    
+    if (!validate(degrees)) {
+        throw new Error("Invalid Longitude value");
+    }
+
+    this.degrees = degrees;
+    this.radians = AngleConverter.degToRad(degrees);
+};
+
+Longitude.prototype.setRadians = function (radians) {
+
+    var degrees = AngleConverter.radToDeg(radians);
 
     if (!validate(degrees)) {
         throw new Error("Invalid Longitude value");
     }
 
-    var angle = new AngleHelper();
-
     this.degrees = degrees;
-    this.radians = angle.degToRad(degrees);
+    this.radians = radians;
 };
 
 Longitude.prototype.getDegrees = function () {

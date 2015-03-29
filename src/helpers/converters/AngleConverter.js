@@ -30,4 +30,4 @@ AngleHelper.prototype.radToDeg = function (radians, roundTo) {
     return round(radians * (180 / Math.PI), places);
 };
 
-module.exports = AngleHelper;
+module.exports = new AngleHelper();

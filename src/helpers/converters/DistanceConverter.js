@@ -1,9 +1,7 @@
 /*jslint node: true */
 "use strict";
 
-function round (value, places) {
-    return Math.round(value * Math.pow(10, places)) / Math.pow(10, places);
-}
+var Rounder = require("../../../src/helpers/math/Rounder");
 
 var DistanceConvertor = function () {
 };
@@ -16,7 +14,7 @@ DistanceConvertor.prototype.convertMultipler = function(value, factor, roundTo) 
         places = roundTo; 
     }
 
-    return round(value * factor, places);
+    return Rounder.round(value * factor, places);
 };
 
 DistanceConvertor.prototype.nauticalMilesTo = function (unitOfMeasurement, unitValue, roundTo) {
@@ -31,7 +29,7 @@ DistanceConvertor.prototype.nauticalMilesTo = function (unitOfMeasurement, unitV
 };
 
 DistanceConvertor.prototype.nauticalMilesToRadians = function (nauticalMiles, roundTo) {
-    return this.convertMultipler(nauticalMiles, Math.PI / 180, roundTo);
+    return Rounder.round(nauticalMiles * Math.PI / (180 * 60), 2);
 };
 
 DistanceConvertor.prototype.nauticalMilesToMiles = function (nauticalMiles, roundTo) {

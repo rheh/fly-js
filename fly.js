@@ -6,7 +6,7 @@
 var Point = require('./src/Point');
 var Latitude = require('./src/Latitude');
 var Longitude = require('./src/Longitude');
-var Convertor = require('./src/helpers/convertors/DistanceConvertor');
+var DistanceConverter = require('./src/helpers/converters/DistanceConverter');
 
 var flyjs = function () {
 };
@@ -56,7 +56,7 @@ flyjs.trueCourse = function (fromLat, fromLon, toLat, toLon, roundTo) {
 * @return {Number} Unit of measurement converted from nautical miles value
 */
 flyjs.nauticalMilesTo = function (unitOfMeasurement, unitValue, roundTo) {
-    return Convertor.nauticalMilesTo(unitOfMeasurement, unitValue, roundTo);
+    return DistanceConverter.nauticalMilesTo(unitOfMeasurement, unitValue, roundTo);
 };
 
 module.exports = flyjs;

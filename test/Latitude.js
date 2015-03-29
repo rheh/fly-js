@@ -5,6 +5,7 @@ var should = chai.should(),
     expect = chai.expect;
 
 var Latitude = require('../src/Latitude');
+var Rounder = require('../src/helpers/math/Rounder');
 
 describe('#Latitude object works', function() {
 
@@ -56,5 +57,38 @@ describe('#Latitude object works', function() {
             latitude.isEquator().should.equal(false);
             latitude.isSouth().should.equal(true);
         });
+    });
+
+    describe('Setters', function () {
+
+        it('Sets and gets degrees', function() {
+
+            var degrees = -10;
+            var latitude = new Latitude(0);
+            latitude.setDegrees(degrees);
+
+            latitude.getDegrees().should.equal(degrees);
+        });
+
+        it('Degrees set and get radians', function() {
+
+            var degrees = -10;
+            var radians = -0.17;
+            var latitude = new Latitude(0);
+            latitude.setDegrees(degrees);
+
+            Rounder.round(latitude.getRadians(), 2).should.equal(radians);
+        });
+
+        it('Radians set and get degrees', function() {
+
+            var radians = -0.17;
+            var degrees = -10;
+            var latitude = new Latitude(0);
+            latitude.setRadians(-0.174532925199433);
+
+            Rounder.round(latitude.getDegrees(), 2).should.equal(degrees);
+        });
+
     });
 });

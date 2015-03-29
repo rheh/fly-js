@@ -5,6 +5,7 @@ var should = chai.should(),
     expect = chai.expect;
 
 var Longitude = require('../src/Longitude');
+var Rounder = require('../src/helpers/math/Rounder');
 
 describe('#Longitude object works', function() {
 
@@ -57,4 +58,38 @@ describe('#Longitude object works', function() {
             longitude.isEast().should.equal(true);
         });
     });
+
+    describe('Setters', function () {
+
+        it('Sets and gets degrees', function() {
+
+            var degrees = -10;
+            var longitude = new Longitude(0);
+            longitude.setDegrees(degrees);
+
+            longitude.getDegrees().should.equal(degrees);
+        });
+
+        it('Degrees set and get radians', function() {
+
+            var degrees = -10;
+            var radians = -0.17;
+            var longitude = new Longitude(0);
+            longitude.setDegrees(degrees);
+
+            Rounder.round(longitude.getRadians(), 2).should.equal(radians);
+        });
+
+        it('Radians set and get degrees', function() {
+
+            var radians = -0.17;
+            var degrees = -10;
+            var longitude = new Longitude(0);
+            longitude.setRadians(-0.174532925199433);
+
+            Rounder.round(longitude.getDegrees(), 2).should.equal(degrees);
+        });
+
+    });
+
 });

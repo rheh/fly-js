@@ -8,6 +8,7 @@ var Latitude = require('../src/Latitude');
 var Longitude = require('../src/Longitude');
 
 var Point = require('../src/Point');
+var Rounder = require('../src/helpers/math/Rounder');
 
 describe('#Point object works', function() {
 
@@ -105,6 +106,24 @@ describe('#Point object works', function() {
 
             var course = 360.00;
             northPole.trueCourse(southPole, 2).should.equal(course);
+        });
+    });
+
+    describe('Enroute calulation works given true course and distance', function () { 
+        
+        it('Calculates the new point given true course and distance from LAX', function() {
+
+            var LAX = new Point(new Latitude(33.9499839), new Longitude(118.400009));
+            var trueCourse = 66;
+            var distanceNm = 100;
+
+            var JFK = LAX.enroute(trueCourse, distanceNm);
+
+            var newLat = JFK.getLatitude().getDegrees();
+            Rounder.round(newLat, 2).should.equal(34.63);
+
+            var newLon = JFK.getLongitude().getDegrees();
+            Rounder.round(newLon, 2).should.equal(116.49);
         });
     });
 });
