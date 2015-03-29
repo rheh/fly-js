@@ -59,4 +59,20 @@ flyjs.nauticalMilesTo = function (unitOfMeasurement, unitValue, roundTo) {
     return DistanceConverter.nauticalMilesTo(unitOfMeasurement, unitValue, roundTo);
 };
 
+/**
+* Calculates the Latitude and Longitude given a true course and distance from a given point
+*
+* @param  {Number} fromLat
+* @param  {Number} fromLon
+* @param  {Number} True course in degrees
+* @param  {Number} Distance in nautical miles
+* @param  {Number} Number decimal places for rouding
+* @return {Number} Unit of measurement converted from nautical miles value
+*/
+flyjs.enroute = function (fromLat, fromLon, trueCourse, distance, roundTo) {
+    var from = new Point(new Latitude(fromLat), new Longitude(fromLon));
+    return from.enroute(trueCourse, distance, roundTo);
+};
+
+
 module.exports = flyjs;

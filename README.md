@@ -17,6 +17,9 @@ fly.trueCourse(53.0, 0, -9.3, 53, 2);
 
 Returns the initial course between the two pairs of decimal latitude and longitude values in degrees to two decimal places (last parameter).
 
+fly.enroute(34.6169641, 118.400009, 66, 100, 2);
+Return new position given true course and distance from a given point
+
 ## Convertors
 
 fly.nauticalMilesTo('Kilometres', 100000, 5);
