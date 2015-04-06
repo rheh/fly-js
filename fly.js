@@ -7,6 +7,7 @@ var Point = require('./src/Point');
 var Latitude = require('./src/Latitude');
 var Longitude = require('./src/Longitude');
 var DistanceConverter = require('./src/helpers/converters/DistanceConverter');
+var SpeedConverter = require('./src/helpers/converters/SpeedConverter');
 var beaufortScale = require('./src/helpers/scales/Beaufort');
 
 var flyjs = function () {
@@ -61,6 +62,42 @@ flyjs.nauticalMilesTo = function (unitOfMeasurement, unitValue, roundTo) {
 };
 
 /**
+* Return unit of measurement converted from knots value
+*
+* @param  {Number} unitOfMeasurement to convert to
+* @param  {Number} unitValue is the knots value one wishes to convert
+* @param  {Number} Number decimal places for rouding
+* @return {Number} Unit of measurement converted from knots value
+*/
+flyjs.knotsTo = function (unitOfMeasurement, unitValue, roundTo) {
+    return SpeedConverter.knotsTo(unitOfMeasurement, unitValue, roundTo);
+};
+
+/**
+* Return unit of measurement converted from mps value
+*
+* @param  {Number} unitOfMeasurement to convert to
+* @param  {Number} unitValue is the mps value one wishes to convert
+* @param  {Number} Number decimal places for rouding
+* @return {Number} Unit of measurement converted from mps value
+*/
+flyjs.mpsTo = function (unitOfMeasurement, unitValue, roundTo) {
+    return SpeedConverter.mpsTo(unitOfMeasurement, unitValue, roundTo);
+};
+
+/**
+* Return unit of measurement converted from knots value
+*
+* @param  {Number} unitOfMeasurement to convert to
+* @param  {Number} unitValue is the knots value one wishes to convert
+* @param  {Number} Number decimal places for rouding
+* @return {Number} Unit of measurement converted from knots value
+*/
+flyjs.knotsTo = function (unitOfMeasurement, unitValue, roundTo) {
+    return SpeedConverter.knotsTo(unitOfMeasurement, unitValue, roundTo);
+};
+
+/**
 * Calculates the Latitude and Longitude given a true course and distance from a given point
 *
 * @param  {Number} fromLat
@@ -85,6 +122,6 @@ flyjs.enroute = function (fromLat, fromLon, trueCourse, distance, roundTo) {
 
 flyjs.beaufortLookup = function (wind, key) {
     return beaufortScale.lookup(wind, key);
-}
+};
 
 module.exports = flyjs;

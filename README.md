@@ -69,9 +69,17 @@ fly.nauticalMilesTo('Centimeters', 100000, 5);
 ```
 Returns the 10000 nautical miles converted to Centimeters rounded to five decimal places.
 
-# Convertors
+```javascript
+fly.mpsTo('Knots', 233, 2);
+```
+Returns the 233 miles per hour converted to Knots rounded to two decimal places.
 
-Simple lookups
+```javascript
+fly.mpsTo('KilometersPerHour', 233);
+```
+Returns the 233 miles per hour converted to km/h.
+
+# lookups
 
 ```javascript
 fly.beaufortLookup(45);
