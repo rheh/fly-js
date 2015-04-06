@@ -7,6 +7,7 @@ var Point = require('./src/Point');
 var Latitude = require('./src/Latitude');
 var Longitude = require('./src/Longitude');
 var DistanceConverter = require('./src/helpers/converters/DistanceConverter');
+var beaufortScale = require('./src/helpers/scales/Beaufort');
 
 var flyjs = function () {
 };
@@ -74,5 +75,16 @@ flyjs.enroute = function (fromLat, fromLon, trueCourse, distance, roundTo) {
     return from.enroute(trueCourse, distance, roundTo);
 };
 
+/**
+* Lookup hepler for the Beaufort Scale
+*
+* @param  {Number} wind value in Knotes
+* @param  {String} key Value to retrieve options are All | Force Index | Description
+* @return {Number | String | Object} Force Index | Description | or both plus range data
+*/
+
+flyjs.beaufortLookup = function (wind, key) {
+    return beaufortScale.lookup(wind, key);
+}
 
 module.exports = flyjs;
