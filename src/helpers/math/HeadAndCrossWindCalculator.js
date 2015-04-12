@@ -17,7 +17,7 @@ HeadAndCrossWindCalculator.prototype.calculate = function (windSpeed, windDirect
         places = roundTo;
     }
 
-    var theta = AngleConverter.degToRad(windDirection - aircraftDirection)
+    var theta = AngleConverter.degToRad(windDirection - aircraftDirection);
 
     this.crossWind = Rounder.round(windSpeed * Math.sin(theta), places);
     this.headWind = Rounder.round(windSpeed * Math.cos(theta), places);
