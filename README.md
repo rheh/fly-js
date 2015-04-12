@@ -1,4 +1,4 @@
-## Synopsis - fly-js v0.0.2
+## fly-js v0.0.3
 A JavaScript utility library focusing on aviation.
 
 <img src='https://travis-ci.org/rheh/fly-js.svg?branch=master'>
@@ -14,13 +14,13 @@ Test can be run eith by:
     mocha test
 
 
-## Continoues Integration
-Via Github's Travis.  Runs tests and linter (jshint)
+## Continuous Integration
+Via Github's Travis.  Runs tests (mocha) and linter (jshint)
 <img src='https://travis-ci.org/rheh/fly-js.svg?branch=master'>
 
 ## API Reference
 
-# Navigation
+# Navigation functions
 
 ```javascript
 fly.distanceTo(58.2, 0, 53.3, -1.2, 2);
@@ -79,7 +79,7 @@ fly.mpsTo('KilometersPerHour', 233);
 ```
 Returns the 233 miles per hour converted to km/h.
 
-# lookups
+# Lookups
 
 ```javascript
 fly.beaufortLookup(45);
@@ -95,6 +95,20 @@ Returns beaufort force index of a 25 knot wind e.g. 6
 fly.beaufortLookup(15, 'all');
 ```
 Returns beaufort force, description and range of a 15
+
+# Calculators
+
+```javascript
+fly.HeadWindCalculator(25, 180, 215, 2).should.equal(20.48);
+```
+
+Returns head wind component, given wind speed (knots), wind direction and aircraft direction (later pair both measured in degrees).
+
+```javascript
+fly.CrossWindCalculator(25, 180, 215, 2).should.equal(-14.34);
+```
+
+Returns cross wind component, given wind speed (knots), wind direction and aircraft direction (later pair both measured in degrees).
 
 ## Contributors
 

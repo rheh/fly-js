@@ -22,7 +22,7 @@ DistanceConvertor.prototype.nauticalMilesTo = function (unitOfMeasurement, unitV
     var converterFunc = 'nauticalMilesTo' + unitOfMeasurement;
 
     if (typeof this[converterFunc] !== "function") { 
-        throw new Error('Unknow conversion');
+        throw new Error('Unknown conversion');
     }
 
     return this[converterFunc](unitValue, roundTo);
