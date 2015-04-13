@@ -52,8 +52,43 @@ DistanceConvertor.prototype.nauticalMilesToCentimetres = function (nauticalMiles
     return this.convertMultipler(nauticalMiles, 185200, roundTo);
 };
 
-DistanceConvertor.prototype.nauticalMilesToInches = function (nauticalMiles, roundTo) {
-    return this.convertMultipler(nauticalMiles, 72913.4, roundTo);
+DistanceConvertor.prototype.nauticalMilesToInches = function (miles, roundTo) {
+    return this.convertMultipler(miles, 72913.4, roundTo);
+};
+
+DistanceConvertor.prototype.milesTo = function (unitOfMeasurement, unitValue, roundTo) {
+
+    var converterFunc = 'milesTo' + unitOfMeasurement;
+
+    if (typeof this[converterFunc] !== "function") { 
+        throw new Error('Unknown conversion');
+    }
+
+    return this[converterFunc](unitValue, roundTo);
+};
+
+DistanceConvertor.prototype.milesToNauticalMiles = function (miles, roundTo) {
+    return this.convertMultipler(miles, 0.868976, roundTo);
+};
+
+DistanceConvertor.prototype.milesToKilometres = function (miles, roundTo) {
+    return this.convertMultipler(miles, 1.609344, roundTo);
+};
+
+DistanceConvertor.prototype.milesToFeet = function (miles, roundTo) {
+    return this.convertMultipler(miles, 5280, roundTo);
+};
+
+DistanceConvertor.prototype.milesToMetres = function (miles, roundTo) {
+    return this.convertMultipler(miles, 1609.344, roundTo);
+};
+
+DistanceConvertor.prototype.milesToCentimetres = function (miles, roundTo) {
+    return this.convertMultipler(miles, 160934.4, roundTo);
+};
+
+DistanceConvertor.prototype.milesToInches = function (miles, roundTo) {
+    return this.convertMultipler(miles, 63360, roundTo);
 };
 
 module.exports = new DistanceConvertor();
