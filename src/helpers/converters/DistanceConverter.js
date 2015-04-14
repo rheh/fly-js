@@ -91,4 +91,39 @@ DistanceConvertor.prototype.milesToInches = function (miles, roundTo) {
     return this.convertMultipler(miles, 63360, roundTo);
 };
 
+DistanceConvertor.prototype.kilometresTo = function (unitOfMeasurement, unitValue, roundTo) {
+
+    var converterFunc = 'kilometresTo' + unitOfMeasurement;
+
+    if (typeof this[converterFunc] !== "function") { 
+        throw new Error('Unknown conversion');
+    }
+
+    return this[converterFunc](unitValue, roundTo);
+};
+
+DistanceConvertor.prototype.kilometresToNauticalMiles = function (kilometres, roundTo) {
+    return this.convertMultipler(kilometres, 0.539956803, roundTo);
+};
+
+DistanceConvertor.prototype.kilometresToMiles = function (kilometres, roundTo) {
+    return this.convertMultipler(kilometres, 0.621371192, roundTo);
+};
+
+DistanceConvertor.prototype.kilometresToFeet = function (kilometres, roundTo) {
+    return this.convertMultipler(kilometres, 3280.8399, roundTo);
+};
+
+DistanceConvertor.prototype.kilometresToMetres = function (kilometres, roundTo) {
+    return this.convertMultipler(kilometres, 1000, roundTo);
+};
+
+DistanceConvertor.prototype.kilometresToCentimetres = function (kilometres, roundTo) {
+    return this.convertMultipler(kilometres, 100000, roundTo);
+};
+
+DistanceConvertor.prototype.kilometresToInches = function (kilometres, roundTo) {
+    return this.convertMultipler(kilometres, 39370.0787, roundTo);
+};
+
 module.exports = new DistanceConvertor();

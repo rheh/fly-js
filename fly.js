@@ -63,6 +63,31 @@ flyjs.nauticalMilesTo = function (unitOfMeasurement, unitValue, roundTo) {
 };
 
 /**
+* Return unit of measurement converted from miles value
+*
+* @param  {Number} unitOfMeasurement to convert to
+* @param  {Number} unitValue is the miles value one wishes to convert
+* @param  {Number} Number decimal places for rouding
+* @return {Number} Unit of measurement converted from miles value
+*/
+flyjs.milesTo = function (unitOfMeasurement, unitValue, roundTo) {
+    return DistanceConverter.milesTo(unitOfMeasurement, unitValue, roundTo);
+};
+
+/**
+* Return unit of measurement converted from kilometres value
+*
+* @param  {Number} unitOfMeasurement to convert to
+* @param  {Number} unitValue is the kilometres value one wishes to convert
+* @param  {Number} Number decimal places for rouding
+* @return {Number} Unit of measurement converted from kilometres value
+*/
+flyjs.kilometresTo = function (unitOfMeasurement, unitValue, roundTo) {
+    return DistanceConverter.kilometresTo(unitOfMeasurement, unitValue, roundTo);
+};
+
+
+/**
 * Return unit of measurement converted from knots value
 *
 * @param  {Number} unitOfMeasurement to convert to
@@ -97,6 +122,7 @@ flyjs.mpsTo = function (unitOfMeasurement, unitValue, roundTo) {
 flyjs.knotsTo = function (unitOfMeasurement, unitValue, roundTo) {
     return SpeedConverter.knotsTo(unitOfMeasurement, unitValue, roundTo);
 };
+
 
 /**
 * Return unit of measurement converted from mps value

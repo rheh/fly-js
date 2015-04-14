@@ -121,4 +121,61 @@ describe('#Distance DistanceConverter works', function () {
             DistanceConverter.milesTo('Centimetres', miles, 4).should.equal(expected_result);
         });
     });
+
+    describe('Conversion for kilometres', function () {
+
+        it('Converts kilometres to nautical miles', function () {
+
+            var kilometres = 20;
+            var expected_result = 10.7991;
+
+            DistanceConverter.kilometresToNauticalMiles(kilometres, 4).should.equal(expected_result);
+            DistanceConverter.kilometresTo('NauticalMiles', kilometres, 4).should.equal(expected_result);
+        });
+        
+        it('Converts kilometres to miles', function () {
+
+            var kilometres = 15;
+            var expected_result = 9.3206;
+
+            DistanceConverter.kilometresToMiles(kilometres, 4).should.equal(expected_result);
+            DistanceConverter.kilometresTo('Miles', kilometres, 4).should.equal(expected_result);
+        });
+        
+        it('Converts kilometres to feet', function () {
+
+            var kilometres = 13;
+            var expected_result = 42650.9187;
+
+            DistanceConverter.kilometresToFeet(kilometres, 4).should.equal(expected_result);
+            DistanceConverter.kilometresTo('Feet', kilometres, 4).should.equal(expected_result);
+        });
+        
+        it('Converts kilometres to metres', function () {
+
+            var kilometres = 33;
+            var expected_result = 33000;
+
+            DistanceConverter.kilometresToMetres(kilometres, 4).should.equal(expected_result);
+            DistanceConverter.kilometresTo('Metres', kilometres, 4).should.equal(expected_result);
+        });        
+
+        it('Converts kilometres to inches', function () {
+
+            var kilometres = 33;
+            var expected_result = 1299212.5971;
+
+            DistanceConverter.kilometresToInches(kilometres, 4).should.equal(expected_result);
+            DistanceConverter.kilometresTo('Inches', kilometres, 4).should.equal(expected_result);
+        });
+
+        it('Converts kilometres to centimeter', function () {
+
+            var kilometres = 41;
+            var expected_result = 4100000;
+
+            DistanceConverter.kilometresToCentimetres(kilometres, 4).should.equal(expected_result);
+            DistanceConverter.kilometresTo('Centimetres', kilometres, 4).should.equal(expected_result);
+        });
+    });
 });

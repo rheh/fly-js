@@ -15,11 +15,19 @@ describe('#Check API calls are accessible', function() {
     fly.beaufortLookup(35, 'force').should.equal(8);
   });
 
-  it('Nautical miles API call accessible', function() {
+  it('To Nautical miles API call accessible', function() {
     fly.nauticalMilesTo('Miles', 523, 2).should.equal(601.86);
   });
 
-  it('Miles API call accessible', function() {
+  it('To Miles API call accessible', function() {
+    fly.milesTo('NauticalMiles', 6.47, 2).should.equal(5.62);
+  });
+
+  it('To Kilometers API call accessible', function() {
+    fly.kilometresTo('Miles', 1000, 2).should.equal(621.37);
+  });
+
+  it('To Mles per second API call accessible', function() {
     fly.mpsTo('Knots', 601.86, 2).should.equal(1169.92);
   });
 
@@ -30,6 +38,7 @@ describe('#Check API calls are accessible', function() {
   it('Miles per hour API call accessible', function() {
     fly.mphTo('MetresPerSecond', 26.47, 2).should.equal(11.83);
   });
+
 
   it('Head wind API call accessible', function() {
     fly.HeadWindCalculator(25, 180, 215, 2).should.equal(20.48);
