@@ -39,6 +39,8 @@ Returns a new position given true course and distance from a given point
 
 # Convertors
 
+## Nautical miles
+
 ```javascript
 fly.nauticalMilesTo('Kilometres', 100000, 5);
 ```
@@ -68,6 +70,39 @@ Returns the 10000 nautical miles converted to Inches rounded to five decimal pla
 fly.nauticalMilesTo('Centimeters', 100000, 5);
 ```
 Returns the 10000 nautical miles converted to Centimeters rounded to five decimal places.
+
+## Miles
+
+```javascript
+fly.milessTo('Kilometres', 100000, 5);
+```
+Returns the 10000 miles converted to Kilometres rounded to five decimal places.
+
+```javascript
+fly.milesTo('Nautical Miles', 100000, 5);
+```
+Returns the 10000 miles converted to Miles rounded to five decimal places.
+
+```javascript
+fly.milesTo('Feet', 100000, 5);
+```
+Returns the 10000 miles converted to Feet rounded to five decimal places.
+
+```javascript
+fly.milesTo('Meters', 100000, 5);
+```
+Returns the 10000 miles converted to Meters rounded to five decimal places.
+
+```javascript
+fly.milesTo('Inches', 100000, 5);
+```
+Returns the 10000 miles converted to Inches rounded to five decimal places.
+
+```javascript
+fly.milesTo('Centimeters', 100000, 5);
+```
+Returns the 10000 miles converted to Centimeters rounded to five decimal places.
+
 
 ```javascript
 fly.mpsTo('Knots', 233, 2);
