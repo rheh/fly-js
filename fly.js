@@ -10,6 +10,7 @@ var DistanceConverter = require('./src/helpers/converters/DistanceConverter');
 var SpeedConverter = require('./src/helpers/converters/SpeedConverter');
 var HeadAndCrossWindCalculator = require('./src/helpers/math/HeadAndCrossWindCalculator');
 var beaufortScale = require('./src/helpers/scales/Beaufort');
+var windCardinalDirection = require('./src/helpers/scales/WindCardinalDirection');
 
 var flyjs = function () {
 };
@@ -188,6 +189,16 @@ flyjs.HeadWindCalculator = function (windSpeed, windDirection, aircraftDirection
 flyjs.CrossWindCalculator = function (windSpeed, windDirection, aircraftDirection, roundTo) {
     HeadAndCrossWindCalculator.calculate(windSpeed, windDirection, aircraftDirection, roundTo);
     return HeadAndCrossWindCalculator.getCrossWind();
+};
+
+/**
+* Cardinal Wind Directoion (Wind rose)
+*
+* @param  {Number} windDirection value in degrees
+* @return {String} Cardinal Directoion e.g. 330 degrees equals NNW (North North West)
+*/
+flyjs.CardinalWindDirection = function (windDirection) {
+    return windCardinalDirection.lookup(windDirection);
 };
 
 module.exports = flyjs;

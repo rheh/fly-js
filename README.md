@@ -74,7 +74,7 @@ Returns the 10000 nautical miles converted to Centimeters rounded to five decima
 ## Miles
 
 ```javascript
-fly.milessTo('Kilometres', 100000, 5);
+fly.milesTo('Kilometres', 100000, 5);
 ```
 Returns the 10000 miles converted to Kilometres rounded to five decimal places.
 
@@ -102,6 +102,39 @@ Returns the 10000 miles converted to Inches rounded to five decimal places.
 fly.milesTo('Centimeters', 100000, 5);
 ```
 Returns the 10000 miles converted to Centimeters rounded to five decimal places.
+
+## Kilometres 
+
+```javascript
+fly.kilometresTo('Miles', 100000, 5);
+```
+Returns the 10000 kilometres converted to Miles rounded to five decimal places.
+
+```javascript
+fly.kilometresTo('Nautical Miles', 100000, 5);
+```
+Returns the 10000 kilometres converted to Nautical Miles rounded to five decimal places.
+
+```javascript
+fly.kilometresTo('Feet', 100000, 5);
+```
+Returns the 10000 kilometres converted to Feet rounded to five decimal places.
+
+```javascript
+fly.kilometresTo('Meters', 100000, 5);
+```
+Returns the 10000 kilometres converted to Meters rounded to five decimal places.
+
+```javascript
+fly.kilometresTo('Inches', 100000, 5);
+```
+Returns the 10000 kilometres converted to Inches rounded to five decimal places.
+
+```javascript
+fly.kilometresTo('Centimeters', 100000, 5);
+```
+Returns the 10000 kilometres converted to Centimeters rounded to five decimal places.
+
 
 
 ```javascript

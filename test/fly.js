@@ -47,4 +47,9 @@ describe('#Check API calls are accessible', function() {
   it('Cross wind API call accessible', function() {
     fly.CrossWindCalculator(25, 180, 215, 2).should.equal(-14.34);
   });
+
+  it('Cardinal Wind Direction call accessible', function() {
+    fly.CardinalWindDirection(180).should.equal("S");
+  });
+
 });
