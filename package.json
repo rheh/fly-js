@@ -1,6 +1,6 @@
 {
   "name": "fly-js",
-  "version": "0.0.0",
+  "version": "0.0.3",
   "description": "A JavaScript utility library focusing on aviation",
   "main": "fly.js",
   "scripts": {
@@ -23,6 +23,9 @@
     "Wind",
     "Triangles"
   ],
+  "dependencies": {
+      "lodash": "3.0.x"
+  },
   "repository": "https://github.com/rheh/fly-js.git",
   "author": "Ray Hammond",
   "license": "MIT",
