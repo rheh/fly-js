@@ -11,7 +11,7 @@ var WindCardinalDirection = function () {
             "ranges": [
                 {
                     "lower": 348.75,
-                    "upper": 360.00 
+                    "upper": 360.00
                 },
                 {
                     "lower": 0,

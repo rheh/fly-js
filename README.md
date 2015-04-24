@@ -149,6 +149,8 @@ Returns the 233 miles per hour converted to km/h.
 
 # Lookups
 
+## Beaufort
+
 ```javascript
 fly.beaufortLookup(45);
 ```
@@ -163,6 +165,11 @@ Returns beaufort force index of a 25 knot wind e.g. 6
 fly.beaufortLookup(15, 'all');
 ```
 Returns beaufort force, description and range of a 15
+
+## Wind Cardinal Direction
+flyjs.CardinalWindDirection(180);
+
+Returns "S" (South) the cardinal direction for a wind at 180 degrees
 
 # Calculators
 

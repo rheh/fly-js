@@ -24,7 +24,7 @@ describe('#Wind cardinal direction look up', function () {
 
         windCardinalDirection.lookup(wind).should.equal(expected_result);
     });
- 
+
     it('Lookup description for NNE between (11.25 - 33.75)', function () {
 
         var wind = 11.25;
