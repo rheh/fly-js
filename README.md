@@ -167,8 +167,10 @@ fly.beaufortLookup(15, 'all');
 Returns beaufort force, description and range of a 15
 
 ## Wind Cardinal Direction
-flyjs.CardinalWindDirection(180);
 
+```javascript
+flyjs.CardinalWindDirection(180);
+```
 Returns "S" (South) the cardinal direction for a wind at 180 degrees
 
 # Calculators
