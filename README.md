@@ -37,6 +37,11 @@ fly.enroute(34.6169641, 118.400009, 66, 100, 2);
 ```
 Returns a new position given true course and distance from a given point
 
+```javascript
+fly.intersectionPoint(53.583378, -0.34851, 180, 51.150837, -0.177416, 15);
+```
+Returns the position the two great circles intersect; using the pair of latitude, longitude and course values as radials
+
 # Convertors
 
 ## Nautical miles
