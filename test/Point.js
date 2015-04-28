@@ -126,4 +126,47 @@ describe('#Point object works', function() {
             Rounder.round(newLon, 2).should.equal(116.49);
         });
     });
+
+    describe('Intersection of two radial test', function () {
+
+        it('Calculates the intersection point given Humerside Airport (HUY) and London Gatwick (LGW)', function() {
+
+            var HUY = new Point(new Latitude(53.583378), new Longitude(-0.34851), 180);
+            var LGW = new Point(new Latitude(51.150837), new Longitude(-0.177416), 15);
+
+            // Humberside Airport (Centre of the Universe)
+            var intersectionPoint = HUY.intersectionPoint(LGW);
+
+            var newLat = intersectionPoint.getLatitude().getDegrees();
+            Rounder.round(newLat, 2).should.equal(52.66);
+
+            var newLon = intersectionPoint.getLongitude().getDegrees();
+            Rounder.round(newLon, 2).should.equal(-0.35);
+        })
+
+        it('Calculates the intersection point given Rome State Airport (REO) and Baker Airport (BKE)', function() {
+
+            var REO = new Point(new Latitude(42.833332), new Longitude(-117.61667), 51);
+            var BKE = new Point(new Latitude(44.838333), new Longitude(-117.81), 137);
+
+            // Boise Airport
+            var BOI = REO.intersectionPoint(BKE);
+
+            var newLat = BOI.getLatitude().getDegrees();
+            Rounder.round(newLat, 2).should.equal(44.88);
+
+            var newLon = BOI.getLongitude().getDegrees();
+            Rounder.round(newLon, 2).should.equal(-121.29);
+        })
+
+        it('Calculates the intersection point given Manchester Airport (MAN) and Sanford (SFB)', function() {
+
+            var SFB = new Point(new Latitude(28.775118), new Longitude(-81.2432), 67.16);
+            var MAN = new Point(new Latitude(53.362907), new Longitude(-2.273354), 247.16);
+
+            // Boise Airport
+            var intersectionPoint = SFB.intersectionPoint(MAN);
+            (intersectionPoint).should.equal('No intersection found');
+        })
+    })
 });

@@ -201,4 +201,21 @@ flyjs.CardinalWindDirection = function (windDirection) {
     return windCardinalDirection.lookup(windDirection);
 };
 
+/**
+* Calculate the interecting point of two great circles
+*
+* @param  {Number} lat1 Description latitude value
+* @param  {Number} lon1 Description longitude value
+* @param  {Number} course1 Course in degrees
+* @param  {Number} lat2 Description latitude value
+* @param  {Number} lon2 Decimal longitude value
+* @param  {Number} course2 Course in degrees
+* @return {Point} Point at which the two radials intersect
+*/
+flyjs.intersectionPoint = function (lat1, lon1, course1, lat2, lon2, course2) {
+    var point1 = new Point(new Latitude(lat1), new Longitude(lon1), course1);
+    var point2 = new Point(new Latitude(lat2), new Longitude(lon2), course2);
+    return point1.intersectionPoint(point2);
+};
+
 module.exports = flyjs;

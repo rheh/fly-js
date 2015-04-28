@@ -1,5 +1,6 @@
 var should = require('chai').should(),
-    fly = require('../fly');
+    fly = require('../fly'),
+    Rounder = require('../src/helpers/math/Rounder');
 
 describe('#Check API calls are accessible', function() {
 
@@ -50,6 +51,17 @@ describe('#Check API calls are accessible', function() {
 
   it('Cardinal Wind Direction call accessible', function() {
     fly.CardinalWindDirection(180).should.equal("S");
+  });
+
+  it('Intersection point call accessible', function() {
+    var intersectionPoint = fly.intersectionPoint(53.583378, -0.34851, 180, 51.150837, -0.177416, 15);
+
+    var newLat = intersectionPoint.getLatitude().getDegrees();
+    Rounder.round(newLat, 2).should.equal(52.66);
+
+    var newLon = intersectionPoint.getLongitude().getDegrees();
+    Rounder.round(newLon, 2).should.equal(-0.35);
+
   });
 
 });
