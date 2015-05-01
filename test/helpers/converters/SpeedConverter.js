@@ -82,7 +82,7 @@ describe('#Distance SpeedConverter works', function () {
         it('Converts m/s to km/h', function () {
 
             var metresPerSecond = 11;
-            var expected_result = 39.6
+            var expected_result = 39.6;
 
             SpeedConverter.mpsToKilometersPerHour(metresPerSecond, 4).should.equal(expected_result);
             SpeedConverter.mpsTo('KilometersPerHour', metresPerSecond, 4).should.equal(expected_result);

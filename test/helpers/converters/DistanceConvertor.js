@@ -97,7 +97,7 @@ describe('#Distance DistanceConverter works', function () {
         it('Converts miles to metres', function () {
 
             var miles = 33;
-            var expected_result = 53108.352
+            var expected_result = 53108.352;
 
             DistanceConverter.milesToMetres(miles, 4).should.equal(expected_result);
             DistanceConverter.milesTo('Metres', miles, 4).should.equal(expected_result);

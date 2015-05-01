@@ -142,7 +142,7 @@ describe('#Point object works', function() {
 
             var newLon = intersectionPoint.getLongitude().getDegrees();
             Rounder.round(newLon, 2).should.equal(-0.35);
-        })
+        });
 
         it('Calculates the intersection point given Rome State Airport (REO) and Baker Airport (BKE)', function() {
 
@@ -157,7 +157,7 @@ describe('#Point object works', function() {
 
             var newLon = BOI.getLongitude().getDegrees();
             Rounder.round(newLon, 2).should.equal(-121.29);
-        })
+        });
 
         it('Calculates the intersection point given Manchester Airport (MAN) and Sanford (SFB)', function() {
 
@@ -167,6 +167,6 @@ describe('#Point object works', function() {
             // Boise Airport
             var intersectionPoint = SFB.intersectionPoint(MAN);
             (intersectionPoint).should.equal('No intersection found');
-        })
-    })
+        });
+    });
 });
