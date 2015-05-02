@@ -96,10 +96,10 @@ WindTriangleCalculator.prototype.calculateCourseAndGroundSpeed = function (trueA
     var angleDifference = AngleConverter.degToRad(heading - windDirection);
 
     var groundSpeed = Math.sqrt(Math.pow(windSpeed, 2) + Math.pow(trueAirSpeed, 2) - 2 * windSpeed * trueAirSpeed * Math.cos(angleDifference));
-    var WCA = Math.atan2(windSpeed * Math.sin(angleDifference),trueAirSpeed - windSpeed * Math.cos(angleDifference));
-    var course = headingInRadians + WCA % 2 * Math.PI;
+    var WCA = Math.atan2(windSpeed * Math.sin(angleDifference), trueAirSpeed - windSpeed * Math.cos(angleDifference));
+    var course = (headingInRadians + WCA) % (2 * Math.PI);
 
-    this.course = Rounder.round(course, places);
+    this.course = Rounder.round(AngleConverter.radToDeg(course), places);
     this.groundSpeed = Rounder.round(groundSpeed, places);
 };
 

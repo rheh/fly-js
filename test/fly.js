@@ -88,13 +88,11 @@ describe('#Check API calls are accessible', function () {
     var windDirection = 132.73; // degrees
 
     var expectedGroundSpeed = 100; // knots
-    var expectedCourse = 100; // degrees
+    var expectedCourse = 60; // degrees
 
     var courseAndGroundSpeed = fly.calculateCourseAndGroundSpeed(trueAirSpeed, heading, windSpeed, windDirection, 2);
 
-    // TODO:
-    //(courseAndGroundSpeed.course).should.equal(expectedCourse);
+    (courseAndGroundSpeed.course).should.equal(expectedCourse);
     (courseAndGroundSpeed.groundSpeed).should.equal(expectedGroundSpeed);
   });
-
 });

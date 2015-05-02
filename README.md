@@ -181,16 +181,36 @@ Returns "S" (South) the cardinal direction for a wind at 180 degrees
 # Calculators
 
 ```javascript
-fly.HeadWindCalculator(25, 180, 215, 2).should.equal(20.48);
+fly.HeadWindCalculator(25, 180, 215, 2);
 ```
 
-Returns head wind component, given wind speed (knots), wind direction and aircraft direction (later pair both measured in degrees).
+Returns head wind component, given wind speed (knots), wind direction and aircraft direction (later pair both measured in degrees). Rounded to 2 decimal places.
 
 ```javascript
-fly.CrossWindCalculator(25, 180, 215, 2).should.equal(-14.34);
+fly.CrossWindCalculator(25, 180, 215, 2);
 ```
 
-Returns cross wind component, given wind speed (knots), wind direction and aircraft direction (later pair both measured in degrees).
+Returns cross wind component, given wind speed (knots), wind direction and aircraft direction (later pair both measured in degrees). Rounded to 2 decimal places.
+
+# Wind Triangle
+
+```javascript
+flyjs.calculateCourseAndGroundSpeed(120, 80, 43, 133, 2);
+```
+
+Returns course and ground speed, given trueAirSpeed, heading, windSpeed and windDirection, rounded to 2 decimal places.
+
+```javascript
+flyjs.calculateHeadingAndGroundSpeed(120, 60, 43, 133, 2);
+```
+
+Returns heading and ground speed, given trueAirSpeed, course, windSpeed and windDirection, rounded to 2 decimal places.
+
+```javascript
+flyjs.calculateWindSpeedAndDirection(trueAirSpeed, groundSpeed, course, heading, 2);
+```
+
+Returns wind speed and direction, given trueAirSpeed, groundSpeed, course and heading, rounded to 2 decimal places.
 
 ## Contributors
 

@@ -232,7 +232,7 @@ flyjs.intersectionPoint = function (lat1, lon1, course1, lat2, lon2, course2) {
 
 flyjs.calculateWindSpeedAndDirection = function (trueAirSpeed, groundSpeed, heading, course, roundTo) {
 
-    WindTriangleCalculator.calculateWindSpeedAndDirection(trueAirSpeed, groundSpeed, heading, course, 2);
+    WindTriangleCalculator.calculateWindSpeedAndDirection(trueAirSpeed, groundSpeed, heading, course, roundTo);
 
     return {
         windSpeed: WindTriangleCalculator.getWindSpeed(),
@@ -247,13 +247,34 @@ flyjs.calculateWindSpeedAndDirection = function (trueAirSpeed, groundSpeed, head
 * @param  {Number} heading Heading in degrees
 * @param  {Number} windSpeed Wind speed in knots
 * @param  {Number} windDirection Wind direction in degrees
-* @param  {Number} roundTo decimal places for rouding
+* @param  {Number} roundTo Decimal places for rouding
+* @return {WindSpeed and Direction} Wind speed and Direction
+*/
+
+flyjs.calculateHeadingAndGroundSpeed = function (trueAirSpeed, course, windSpeed, windDirection, roundTo) {
+
+    WindTriangleCalculator.calculateHeadingAndGroundSpeed(trueAirSpeed, heading, windSpeed, windDirection, roundTo);
+
+    return {
+        heading: WindTriangleCalculator.getHeading(),
+        groundSpeed: WindTriangleCalculator.getGroundSpeed()
+    };
+};
+
+/**
+*  Course and Ground Speed calculation given true air speed, ground speed, course and heading
+*
+* @param  {Number} trueAirSpeed True airspeed
+* @param  {Number} heading Heading in degrees
+* @param  {Number} windSpeed Wind speed in knots
+* @param  {Number} windDirection Wind direction in degrees
+* @param  {Number} roundTo Decimal places for rouding
 * @return {WindSpeed and Direction} Wind speed and Direction
 */
 
 flyjs.calculateCourseAndGroundSpeed = function (trueAirSpeed, heading, windSpeed, windDirection, roundTo) {
 
-    WindTriangleCalculator.calculateCourseAndGroundSpeed(trueAirSpeed, heading, windSpeed, windDirection, 2);
+    WindTriangleCalculator.calculateCourseAndGroundSpeed(trueAirSpeed, heading, windSpeed, windDirection, roundTo);
 
     return {
         course: WindTriangleCalculator.getCourse(),
