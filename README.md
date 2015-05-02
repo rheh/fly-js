@@ -1,4 +1,4 @@
-## fly-js v0.0.3
+## fly-js v0.0.4
 A JavaScript utility library focusing on aviation.
 
 <img src='https://travis-ci.org/rheh/fly-js.svg?branch=master'>
