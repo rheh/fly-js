@@ -49,108 +49,108 @@ Returns the position the two great circles intersect; using the pair of latitude
 ```javascript
 fly.nauticalMilesTo('Kilometres', 100000, 5);
 ```
-Returns the 10000 nautical miles converted to Kilometres rounded to five decimal places.
+Returns 10000 nautical miles converted to Kilometres rounded to five decimal places.
 
 ```javascript
 fly.nauticalMilesTo('Miles', 100000, 5);
 ```
-Returns the 10000 nautical miles converted to Miles rounded to five decimal places.
+Returns 10000 nautical miles converted to Miles rounded to five decimal places.
 
 ```javascript
 fly.nauticalMilesTo('Feet', 100000, 5);
 ```
-Returns the 10000 nautical miles converted to Feet rounded to five decimal places.
+Returns 10000 nautical miles converted to Feet rounded to five decimal places.
 
 ```javascript
 fly.nauticalMilesTo('Meters', 100000, 5);
 ```
-Returns the 10000 nautical miles converted to Meters rounded to five decimal places.
+Returns 10000 nautical miles converted to Meters rounded to five decimal places.
 
 ```javascript
 fly.nauticalMilesTo('Inches', 100000, 5);
 ```
-Returns the 10000 nautical miles converted to Inches rounded to five decimal places.
+Returns 10000 nautical miles converted to Inches rounded to five decimal places.
 
 ```javascript
 fly.nauticalMilesTo('Centimeters', 100000, 5);
 ```
-Returns the 10000 nautical miles converted to Centimeters rounded to five decimal places.
+Returns 10000 nautical miles converted to Centimeters rounded to five decimal places.
 
 ## Miles
 
 ```javascript
 fly.milesTo('Kilometres', 100000, 5);
 ```
-Returns the 10000 miles converted to Kilometres rounded to five decimal places.
+Returns 10000 miles converted to Kilometres rounded to five decimal places.
 
 ```javascript
 fly.milesTo('Nautical Miles', 100000, 5);
 ```
-Returns the 10000 miles converted to Miles rounded to five decimal places.
+Returns 10000 miles converted to Miles rounded to five decimal places.
 
 ```javascript
 fly.milesTo('Feet', 100000, 5);
 ```
-Returns the 10000 miles converted to Feet rounded to five decimal places.
+Returns 10000 miles converted to Feet rounded to five decimal places.
 
 ```javascript
 fly.milesTo('Meters', 100000, 5);
 ```
-Returns the 10000 miles converted to Meters rounded to five decimal places.
+Returns 10000 miles converted to Meters rounded to five decimal places.
 
 ```javascript
 fly.milesTo('Inches', 100000, 5);
 ```
-Returns the 10000 miles converted to Inches rounded to five decimal places.
+Returns 10000 miles converted to Inches rounded to five decimal places.
 
 ```javascript
 fly.milesTo('Centimeters', 100000, 5);
 ```
-Returns the 10000 miles converted to Centimeters rounded to five decimal places.
+Returns 10000 miles converted to Centimeters rounded to five decimal places.
 
 ## Kilometres 
 
 ```javascript
 fly.kilometresTo('Miles', 100000, 5);
 ```
-Returns the 10000 kilometres converted to Miles rounded to five decimal places.
+Returns 10000 kilometres converted to Miles rounded to five decimal places.
 
 ```javascript
 fly.kilometresTo('Nautical Miles', 100000, 5);
 ```
-Returns the 10000 kilometres converted to Nautical Miles rounded to five decimal places.
+Returns 10000 kilometres converted to Nautical Miles rounded to five decimal places.
 
 ```javascript
 fly.kilometresTo('Feet', 100000, 5);
 ```
-Returns the 10000 kilometres converted to Feet rounded to five decimal places.
+Returns 10000 kilometres converted to Feet rounded to five decimal places.
 
 ```javascript
 fly.kilometresTo('Meters', 100000, 5);
 ```
-Returns the 10000 kilometres converted to Meters rounded to five decimal places.
+Returns 10000 kilometres converted to Meters rounded to five decimal places.
 
 ```javascript
 fly.kilometresTo('Inches', 100000, 5);
 ```
-Returns the 10000 kilometres converted to Inches rounded to five decimal places.
+Returns 10000 kilometres converted to Inches rounded to five decimal places.
 
 ```javascript
 fly.kilometresTo('Centimeters', 100000, 5);
 ```
-Returns the 10000 kilometres converted to Centimeters rounded to five decimal places.
+Returns 10000 kilometres converted to Centimeters rounded to five decimal places.
 
 
 
 ```javascript
 fly.mpsTo('Knots', 233, 2);
 ```
-Returns the 233 miles per hour converted to Knots rounded to two decimal places.
+Returns 233 miles per hour converted to Knots rounded to two decimal places.
 
 ```javascript
 fly.mpsTo('KilometersPerHour', 233);
 ```
-Returns the 233 miles per hour converted to km/h.
+Returns 233 miles per hour converted to km/h.
 
 # Lookups
 
