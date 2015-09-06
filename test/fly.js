@@ -16,6 +16,10 @@ describe('#Check API calls are accessible', function () {
     fly.beaufortLookup(35, 'force').should.equal(8);
   });
 
+  it('ICAO Wakre lookup API call accessible', function () {
+    fly.wakeLookup(35).should.equal('L');
+  });
+
   it('To Nautical miles API call accessible', function () {
     fly.nauticalMilesTo('Miles', 523, 2).should.equal(601.86);
   });

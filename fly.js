@@ -12,6 +12,7 @@ var HeadAndCrossWindCalculator = require('./src/helpers/math/HeadAndCrossWindCal
 var WindTriangleCalculator = require('./src/helpers/math/WindTriangleCalculator');
 var beaufortScale = require('./src/helpers/scales/Beaufort');
 var windCardinalDirection = require('./src/helpers/scales/WindCardinalDirection');
+var wakeLookup = require('./src/helpers/scales/Wake');
 
 var flyjs = function () {
 };
@@ -162,6 +163,16 @@ flyjs.enroute = function (fromLat, fromLon, trueCourse, distance, roundTo) {
 */
 flyjs.beaufortLookup = function (wind, key) {
     return beaufortScale.lookup(wind, key);
+};
+
+/**
+* Lookup hepler for the Aircraft Wake
+*
+* @param  {Number} weight in kg
+* @return {String} ICAO Wake category
+*/
+flyjs.wakeLookup = function (weightOfAircraftKg) {
+    return wakeLookup.lookup(weightOfAircraftKg);
 };
 
 /**
