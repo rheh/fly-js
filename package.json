@@ -1,6 +1,6 @@
 {
   "name": "fly-js",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "A JavaScript utility library focusing on aviation",
   "main": "fly.js",
   "scripts": {
