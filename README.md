@@ -178,6 +178,15 @@ flyjs.CardinalWindDirection(180);
 ```
 Returns "S" (South) the cardinal direction for a wind at 180 degrees
 
+## Wake (ICAO categorisation)
+
+```javascript
+fly.wakeLookup(4500);
+```
+
+Returns the ICAO wake category for an aircraft of 4500kg
+
+
 # Calculators
 
 ```javascript
