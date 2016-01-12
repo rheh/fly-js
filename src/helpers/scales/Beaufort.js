@@ -1,8 +1,6 @@
 /*jslint node: true */
 "use strict";
 
-var _ = require('lodash');
-
 var Beaufort = function () {
 
     this.scale = [
@@ -99,7 +97,7 @@ var Beaufort = function () {
             "description": "Violent Storm",
             "windspeed": {
                 "lower": 56,
-                "upper": 63 
+                "upper": 63
             }
         },
         {
@@ -107,7 +105,7 @@ var Beaufort = function () {
             "description": "Hurricane",
             "windspeed": {
                 "lower": 64,
-                "upper": Infinity 
+                "upper": Infinity
             }
         }
     ];
@@ -126,12 +124,18 @@ Beaufort.prototype.lookup = function (windKnotes, key) {
         key = "description";
     }
 
-    _.forOwn(this.scale, function (item) {
+    var self = this;
 
-        if (this.between(item, windKnotes)) {
+    Object.keys(self.scale).forEach(function (key) {
+
+        var item = self.scale[key];
+
+        if (self.between(item, windKnotes)) {
             match = item[key] || item;
         }
-    }, this);
+
+    });
+
 
     return match;
 };

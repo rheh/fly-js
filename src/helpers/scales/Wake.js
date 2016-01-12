@@ -1,8 +1,6 @@
 /*jslint node: true */
 "use strict";
 
-var _ = require('lodash');
-
 var Wake = function () {
 
     this.categories = [
@@ -44,13 +42,17 @@ Wake.prototype.lookup = function (aircraftWeightKg) {
         throw('Negative weight not permitted');
     }
 
-    _.forOwn(this.categories, function (item) {
+    var self = this;
 
-        if (this.between(item, aircraftWeightKg)) {
+    Object.keys(self.categories).forEach(function (key) {
+
+        var item = self.categories[key];
+
+        if (self.between(item, aircraftWeightKg)) {
             match = item.code;
         }
 
-    }, this);
+    });
 
     return match;
 };

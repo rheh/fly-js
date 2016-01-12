@@ -1,8 +1,6 @@
 /*jslint node: true */
 "use strict";
 
-var _ = require('lodash');
-
 var WindCardinalDirection = function () {
 
 	this.scale = [
@@ -165,17 +163,23 @@ WindCardinalDirection.prototype.lookup = function (windDirection) {
 
     var match = null;
 
-    _.forOwn(this.scale, function (item) {
+		var self = this;
 
-        _.forOwn(item.ranges, function (range) {
+		Object.keys(self.scale).forEach(function (key) {
 
-            if (this.between(range, windDirection)) {
-                match = item.cardinalDirection;
-            }
+				var item = self.scale[key];
 
-        }, this);
+				Object.keys(item.ranges).forEach(function (rkey) {
 
-    }, this);
+						var range = item[rkey];
+
+						if (self.between(range, windDirection)) {
+							match = item.cardinalDirection;
+						}
+
+				});
+
+		});
 
     return match;
 };
