@@ -1,7 +1,7 @@
 /*jslint node: true */
 "use strict";
 
-var wakeCategories = require('./wakeCategories.json');
+var wakeCategories = require('./WakeCategories.json');
 
 var Wake = function () {
 
