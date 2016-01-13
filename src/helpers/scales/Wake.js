@@ -1,32 +1,11 @@
 /*jslint node: true */
 "use strict";
 
+var wakeCategories = require('./wakeCategories.json');
+
 var Wake = function () {
 
-    this.categories = [
-        {
-            code: 'H',
-            kg: {
-              lower: 136000,
-              upper: Infinity
-            }
-        },
-        {
-            code: 'M',
-            kg: {
-              lower: 7000,
-              upper: 136000
-            }
-        },
-        {
-            code: 'L',
-            kg: {
-              lower: 0,
-              upper: 7000
-            }
-        },
-
-    ];
+    this.categories = wakeCategories;
 
 };
 
