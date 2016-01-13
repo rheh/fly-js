@@ -44,9 +44,9 @@ Wake.prototype.lookup = function (aircraftWeightKg) {
 
     var self = this;
 
-    Object.keys(self.categories).forEach(function (key) {
+    Object.keys(self.categories).forEach(function (categoryKey) {
 
-        var item = self.categories[key];
+        var item = self.categories[categoryKey];
 
         if (self.between(item, aircraftWeightKg)) {
             match = item.code;

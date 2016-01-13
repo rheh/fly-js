@@ -3,7 +3,7 @@
 
 var WindCardinalDirection = function () {
 
-	this.scale = [
+    this.scale = [
         {
             "cardinalDirection": "N",
             "ranges": [
@@ -163,23 +163,23 @@ WindCardinalDirection.prototype.lookup = function (windDirection) {
 
     var match = null;
 
-		var self = this;
+    var self = this;
 
-		Object.keys(self.scale).forEach(function (key) {
+    Object.keys(self.scale).forEach(function (scaleKey) {
 
-				var item = self.scale[key];
+        var item = self.scale[scaleKey];
 
-				Object.keys(item.ranges).forEach(function (rkey) {
+        Object.keys(item.ranges).forEach(function (rangesKey) {
 
-						var range = item[rkey];
+            var range = item.ranges[rangesKey];
 
-						if (self.between(range, windDirection)) {
-							match = item.cardinalDirection;
-						}
+            if (self.between(range, windDirection)) {
+                match = item.cardinalDirection;
+            }
 
-				});
+        });
 
-		});
+    });
 
     return match;
 };

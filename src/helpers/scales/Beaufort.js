@@ -126,9 +126,9 @@ Beaufort.prototype.lookup = function (windKnotes, key) {
 
     var self = this;
 
-    Object.keys(self.scale).forEach(function (key) {
+    Object.keys(self.scale).forEach(function (scaleKey) {
 
-        var item = self.scale[key];
+        var item = self.scale[scaleKey];
 
         if (self.between(item, windKnotes)) {
             match = item[key] || item;
