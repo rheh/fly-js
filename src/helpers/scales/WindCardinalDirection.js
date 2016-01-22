@@ -1,160 +1,12 @@
 /*jslint node: true */
 "use strict";
 
-var _ = require('lodash');
+var windCardinalDirectionScale = require('./WindCardinalDirectionScale.json');
 
 var WindCardinalDirection = function () {
 
-	this.scale = [
-        {
-            "cardinalDirection": "N",
-            "ranges": [
-                {
-                    "lower": 348.75,
-                    "upper": 360.00
-                },
-                {
-                    "lower": 0,
-                    "upper": 11.25
-                }
-            ]
-        },
-        {
-            "cardinalDirection": "NNE",
-            "ranges": [
-                {
-                    "lower": 11.25,
-                    "upper": 33.75
-                }
-            ]
-        },
-        {
-            "cardinalDirection": "NE",
-            "ranges": [
-                {
-                    "lower": 33.75,
-                    "upper": 56.25
-                }
-            ]
-        },
-        {
-            "cardinalDirection": "ENE",
-            "ranges": [
-                {
-                    "lower": 56.25,
-                    "upper": 78.75
-                }
-            ]
-        },
-        {
-            "cardinalDirection": "E",
-            "ranges": [
-                {
-                    "lower": 78.75,
-                    "upper": 101.25
-                }
-            ]
-        },
-        {
-            "cardinalDirection": "ESE",
-            "ranges": [
-                {
-                    "lower": 101.25,
-                    "upper": 123.75
-                }
-            ]
-        },
-        {
-            "cardinalDirection": "SE",
-            "ranges": [
-                {
-                    "lower": 123.75,
-                    "upper": 146.25
-                }
-            ]
-        },
-        {
-            "cardinalDirection": "SSE",
-            "ranges": [
-                {
-                    "lower": 146.25,
-                    "upper": 168.75
-                }
-            ]
-        },
-        {
-            "cardinalDirection": "S",
-            "ranges": [
-                {
-                    "lower": 168.75,
-                    "upper": 191.25
-                }
-            ]
-        },
-        {
-            "cardinalDirection": "SSW",
-            "ranges": [
-                {
-                    "lower": 191.25,
-                    "upper": 213.75
-                }
-            ]
-        },
-        {
-            "cardinalDirection": "SW",
-            "ranges": [
-                {
-                    "lower": 213.75,
-                    "upper": 236.25
-                }
-            ]
-        },
-        {
-            "cardinalDirection": "WSW",
-            "ranges": [
-                {
-                    "lower": 236.25,
-                    "upper": 258.75
-                }
-            ]
-        },
-        {
-            "cardinalDirection": "W",
-            "ranges": [
-                {
-                    "lower": 258.75,
-                    "upper": 281.25
-                }
-            ]
-        },
-        {
-            "cardinalDirection": "WNW",
-            "ranges": [
-                {
-                    "lower": 281.25,
-                    "upper": 303.75
-                }
-            ]
-        },
-        {
-            "cardinalDirection": "NW",
-            "ranges": [
-                {
-                    "lower": 303.75,
-                    "upper": 326.25
-                }
-            ]
-        },
-        {
-            "cardinalDirection": "NNW",
-            "ranges": [
-                {
-                    "lower": 326.25,
-                    "upper": 348.75
-                }
-            ]
-        }
-    ];
+    this.scale = windCardinalDirectionScale;
+
 };
 
 WindCardinalDirection.prototype.between = function (item, windDirection) {
@@ -165,17 +17,23 @@ WindCardinalDirection.prototype.lookup = function (windDirection) {
 
     var match = null;
 
-    _.forOwn(this.scale, function (item) {
+    var self = this;
 
-        _.forOwn(item.ranges, function (range) {
+    Object.keys(self.scale).forEach(function (scaleKey) {
 
-            if (this.between(range, windDirection)) {
+        var item = self.scale[scaleKey];
+
+        Object.keys(item.ranges).forEach(function (rangesKey) {
+
+            var range = item.ranges[rangesKey];
+
+            if (self.between(range, windDirection)) {
                 match = item.cardinalDirection;
             }
 
-        }, this);
+        });
 
-    }, this);
+    });
 
     return match;
 };

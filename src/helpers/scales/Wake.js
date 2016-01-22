@@ -1,34 +1,11 @@
 /*jslint node: true */
 "use strict";
 
-var _ = require('lodash');
+var wakeCategories = require('./WakeCategories.json');
 
 var Wake = function () {
 
-    this.categories = [
-        {
-            code: 'H',
-            kg: {
-              lower: 136000,
-              upper: Infinity
-            }
-        },
-        {
-            code: 'M',
-            kg: {
-              lower: 7000,
-              upper: 136000
-            }
-        },
-        {
-            code: 'L',
-            kg: {
-              lower: 0,
-              upper: 7000
-            }
-        },
-
-    ];
+    this.categories = wakeCategories;
 
 };
 
@@ -44,13 +21,17 @@ Wake.prototype.lookup = function (aircraftWeightKg) {
         throw('Negative weight not permitted');
     }
 
-    _.forOwn(this.categories, function (item) {
+    var self = this;
 
-        if (this.between(item, aircraftWeightKg)) {
+    Object.keys(self.categories).forEach(function (categoryKey) {
+
+        var item = self.categories[categoryKey];
+
+        if (self.between(item, aircraftWeightKg)) {
             match = item.code;
         }
 
-    }, this);
+    });
 
     return match;
 };

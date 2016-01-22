@@ -23,9 +23,7 @@
     "Wind",
     "Triangles"
   ],
-  "dependencies": {
-      "lodash": "3.0.x"
-  },
+  "dependencies": {},
   "repository": "https://github.com/rheh/fly-js.git",
   "author": "Ray Hammond",
   "license": "MIT",
