@@ -262,7 +262,7 @@ flyjs.calculateWindSpeedAndDirection = function (trueAirSpeed, groundSpeed, head
 * @return {WindSpeed and Direction} Wind speed and Direction
 */
 
-flyjs.calculateHeadingAndGroundSpeed = function (trueAirSpeed, course, windSpeed, windDirection, roundTo) {
+flyjs.calculateHeadingAndGroundSpeed = function (trueAirSpeed, heading, windSpeed, windDirection, roundTo) {
 
     WindTriangleCalculator.calculateHeadingAndGroundSpeed(trueAirSpeed, heading, windSpeed, windDirection, roundTo);
 
