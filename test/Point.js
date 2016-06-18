@@ -109,27 +109,30 @@ describe('#Point object works', function() {
         });
     });
 
-    describe('Enroute calulation works given true course and distance', function () { 
-        
+    describe('Enroute calulation works given true course and distance', function () {
+
         it('Calculates the new point given true course and distance from LAX', function() {
 
-            var LAX = new Point(new Latitude(33.9499839), new Longitude(118.400009));
+            var latitude = new Latitude(33.9499839);
+            var longitude = new Longitude(-118.400009);
+
+            var LAX = new Point(latitude, longitude);
             var trueCourse = 66;
             var distanceNm = 100;
 
             var JFK = LAX.enroute(trueCourse, distanceNm);
 
             var newLat = JFK.getLatitude().getDegrees();
-            Rounder.round(newLat, 2).should.equal(34.63);
+            Rounder.round(newLat, 2).should.equal(34.61);
 
             var newLon = JFK.getLongitude().getDegrees();
-            Rounder.round(newLon, 2).should.equal(116.49);
+            Rounder.round(newLon, 2).should.equal(-116.55);
         });
     });
 
     describe('Intersection of two radial test', function () {
 
-        it('Calculates the intersection point given Humerside Airport (HUY) and London Gatwick (LGW)', function() {
+        it('Calculates the intersection point given Humberside Airport (HUY) and London Gatwick (LGW)', function() {
 
             var HUY = new Point(new Latitude(53.583378), new Longitude(-0.34851), 180);
             var LGW = new Point(new Latitude(51.150837), new Longitude(-0.177416), 15);

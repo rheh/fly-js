@@ -7,21 +7,14 @@ var DistanceConvertor = function () {
 };
 
 DistanceConvertor.prototype.convertMultipler = function(value, factor, roundTo) {
-
-    var places = 15;
-
-    if (roundTo) {
-        places = roundTo; 
-    }
-
-    return Rounder.round(value * factor, places);
+    return Rounder.round(value * factor, roundTo);
 };
 
 DistanceConvertor.prototype.nauticalMilesTo = function (unitOfMeasurement, unitValue, roundTo) {
 
     var converterFunc = 'nauticalMilesTo' + unitOfMeasurement;
 
-    if (typeof this[converterFunc] !== "function") { 
+    if (typeof this[converterFunc] !== "function") {
         throw new Error('Unknown conversion');
     }
 
@@ -29,7 +22,7 @@ DistanceConvertor.prototype.nauticalMilesTo = function (unitOfMeasurement, unitV
 };
 
 DistanceConvertor.prototype.nauticalMilesToRadians = function (nauticalMiles, roundTo) {
-    return Rounder.round(nauticalMiles * Math.PI / (180 * 60), 2);
+    return this.convertMultipler(nauticalMiles, Math.PI / (180 * 60), roundTo);
 };
 
 DistanceConvertor.prototype.nauticalMilesToMiles = function (nauticalMiles, roundTo) {
@@ -60,7 +53,7 @@ DistanceConvertor.prototype.milesTo = function (unitOfMeasurement, unitValue, ro
 
     var converterFunc = 'milesTo' + unitOfMeasurement;
 
-    if (typeof this[converterFunc] !== "function") { 
+    if (typeof this[converterFunc] !== "function") {
         throw new Error('Unknown conversion');
     }
 
@@ -95,7 +88,7 @@ DistanceConvertor.prototype.kilometresTo = function (unitOfMeasurement, unitValu
 
     var converterFunc = 'kilometresTo' + unitOfMeasurement;
 
-    if (typeof this[converterFunc] !== "function") { 
+    if (typeof this[converterFunc] !== "function") {
         throw new Error('Unknown conversion');
     }
 

@@ -14,11 +14,11 @@ function round (value, places) {
 var Point = function (latitude, longitude, course) {
 
     if (!latitude) {
-        throw new Error("Invalid Latitude");
+        throw new Error("Invalid Latitude" + latitude);
     }
 
     if (!longitude) {
-        throw new Error("Invalid Longitude");
+        throw new Error("Invalid Longitude" + longitude);
     }
 
     this.latitude = latitude;
@@ -81,7 +81,7 @@ Point.prototype.distanceInRadians = function (to) {
     var lat2 = to.latitude.getRadians();
     var lon2 = to.longitude.getRadians();
 
-    return Math.acos(Math.sin(lat1) * Math.sin(lat2) + 
+    return Math.acos(Math.sin(lat1) * Math.sin(lat2) +
         Math.cos(lat1) * Math.cos(lat2) * Math.cos(lon1 - lon2));
 };
 
@@ -115,11 +115,11 @@ Point.prototype.trueCourse = function (to, roundTo) {
 
     } else {
 
-        if (Math.sin(lon2 - lon1) < 0) {  
-            trueCourse = Math.acos((Math.sin(lat2) - Math.sin(lat1) * 
+        if (Math.sin(lon2 - lon1) < 0) {
+            trueCourse = Math.acos((Math.sin(lat2) - Math.sin(lat1) *
                 Math.cos(distanceRadians)) / (Math.sin(distanceRadians) * Math.cos(lat1)));
         } else {
-            trueCourse = 2 * Math.PI - Math.acos((Math.sin(lat2) - Math.sin(lat1) * 
+            trueCourse = 2 * Math.PI - Math.acos((Math.sin(lat2) - Math.sin(lat1) *
                 Math.cos(distanceRadians)) / (Math.sin(distanceRadians) * Math.cos(lat1)));
         }
     }
@@ -132,10 +132,19 @@ Point.prototype.enroute = function (trueCourse, nauticalMiles, roundTo) {
     var lat1 = this.latitude.getRadians();
     var lon1 = this.longitude.getRadians();
 
-    var distance = DistanceConverter.nauticalMilesToRadians(nauticalMiles);
     var trueCourseRad = AngleConverter.degToRad(trueCourse);
 
+    var distance = DistanceConverter.nauticalMilesToRadians(nauticalMiles);
+
+    console.log("Lat = " + lat1);
+    console.log("Lon = " + lon1);
+    console.log("Distance = " + distance);
+    console.log("True Course = " + trueCourse);
+    console.log("True Course Rad = " + trueCourseRad);
+
     var newLat = Math.asin(Math.sin(lat1) * Math.cos(distance) + Math.cos(lat1) * Math.sin(distance) * Math.cos(trueCourseRad));
+
+    console.log("Intermediate1 " + Math.asin(Math.sin(trueCourseRad) * Math.sin(distance) / Math.cos(newLat)));
     var newLon = ((lon1 - Math.asin(Math.sin(trueCourseRad) * Math.sin(distance) / Math.cos(newLat)) + Math.PI) % (2 * Math.PI)) - Math.PI;
 
     var enroutePoint = new Point(new Latitude(0.0), new Longitude(0.0));
