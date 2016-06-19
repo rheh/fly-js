@@ -8,6 +8,39 @@ var DistanceConverter = require('../../../src/helpers/converters/DistanceConvert
 
 describe('#Distance DistanceConverter works', function () {
 
+    describe('Invalid parameter tests', function () {
+
+        it('Attempt to convert nautical miles to an unknown unit', function () {
+
+            var nauticalMiles = 10;
+
+            assert.throw(function() {
+                DistanceConverter.nauticalMilesTo('Mars Miles',
+                    nauticalMiles, 4);
+            }, Error, 'Unknown conversion');
+        });
+
+        it('Attempt to convert miles to an unknown unit', function () {
+
+            var nauticalMiles = 10;
+
+            assert.throw(function() {
+                DistanceConverter.milesTo('Mars Miles',
+                    nauticalMiles, 4);
+            }, Error, 'Unknown conversion');
+        });
+
+        it('Attempt to convert kilometres to an unknown unit', function () {
+
+            var nauticalMiles = 10;
+
+            assert.throw(function() {
+                DistanceConverter.kilometresTo('Mars Miles',
+                    nauticalMiles, 4);
+            }, Error, 'Unknown conversion');
+        });
+    });
+
     describe('Conversion for nautical miles', function () {
 
         it('Converts nautical miles to miles', function () {
@@ -16,35 +49,71 @@ describe('#Distance DistanceConverter works', function () {
             var expected_result = 11.5078;
 
             DistanceConverter.nauticalMilesToMiles(nauticalMiles, 4).should.equal(expected_result);
+        });
+
+        it('Converts nautical miles to miles', function () {
+
+            var nauticalMiles = 10;
+            var expected_result = 11.5078;
+
             DistanceConverter.nauticalMilesTo('Miles', nauticalMiles, 4).should.equal(expected_result);
-        }); 
-        
+        });
+
+        it('Converts nautical miles to kilometers', function () {
+
+            var nauticalMiles = 10;
+            var expected_result = 18.52;
+
+            DistanceConverter.nauticalMilesTo('Kilometres', nauticalMiles, 4).should.equal(expected_result);
+        });
+
         it('Converts nautical miles to kilometers', function () {
 
             var nauticalMiles = 10;
             var expected_result = 18.52;
 
             DistanceConverter.nauticalMilesToKilometres(nauticalMiles, 4).should.equal(expected_result);
-            DistanceConverter.nauticalMilesTo('Kilometres', nauticalMiles, 4).should.equal(expected_result);
         });
-        
+
         it('Converts nautical miles to feet', function () {
 
             var nauticalMiles = 10;
             var expected_result = 60761.2;
 
             DistanceConverter.nauticalMilesToFeet(nauticalMiles, 4).should.equal(expected_result);
+        });
+
+        it('Converts nautical miles to feet', function () {
+
+            var nauticalMiles = 10;
+            var expected_result = 60761.2;
+
             DistanceConverter.nauticalMilesTo('Feet', nauticalMiles, 4).should.equal(expected_result);
         });
-        
+
+        it('Converts nautical miles to metres', function () {
+
+            var nauticalMiles = 10;
+            var expected_result = 18520;
+
+            DistanceConverter.nauticalMilesTo('Metres', nauticalMiles, 4).should.equal(expected_result);
+        });
+
         it('Converts nautical miles to metres', function () {
 
             var nauticalMiles = 10;
             var expected_result = 18520;
 
             DistanceConverter.nauticalMilesToMetres(nauticalMiles, 4).should.equal(expected_result);
-            DistanceConverter.nauticalMilesTo('Metres', nauticalMiles, 4).should.equal(expected_result);
-        });        
+        });
+
+        it('Converts nautical miles to inches', function () {
+
+            var nauticalMiles = 10;
+            var expected_result = 729134;
+
+            DistanceConverter.nauticalMilesTo('Inches', nauticalMiles, 4).should.equal(expected_result);
+        });
 
         it('Converts nautical miles to inches', function () {
 
@@ -52,7 +121,14 @@ describe('#Distance DistanceConverter works', function () {
             var expected_result = 729134;
 
             DistanceConverter.nauticalMilesToInches(nauticalMiles, 4).should.equal(expected_result);
-            DistanceConverter.nauticalMilesTo('Inches', nauticalMiles, 4).should.equal(expected_result);
+        });
+
+        it('Converts nautical miles to centimeter', function () {
+
+            var nauticalMiles = 10;
+            var expected_result = 1852000;
+
+            DistanceConverter.nauticalMilesTo('Centimetres', nauticalMiles, 4).should.equal(expected_result);
         });
 
         it('Converts nautical miles to centimeter', function () {
@@ -61,8 +137,8 @@ describe('#Distance DistanceConverter works', function () {
             var expected_result = 1852000;
 
             DistanceConverter.nauticalMilesToCentimetres(nauticalMiles, 4).should.equal(expected_result);
-            DistanceConverter.nauticalMilesTo('Centimetres', nauticalMiles, 4).should.equal(expected_result);
         });
+
     });
 
     describe('Conversion for miles', function () {
@@ -75,7 +151,7 @@ describe('#Distance DistanceConverter works', function () {
             DistanceConverter.milesToNauticalMiles(miles, 4).should.equal(expected_result);
             DistanceConverter.milesTo('NauticalMiles', miles, 4).should.equal(expected_result);
         });
-        
+
         it('Converts miles to kilometers', function () {
 
             var miles = 15;
@@ -84,7 +160,7 @@ describe('#Distance DistanceConverter works', function () {
             DistanceConverter.milesToKilometres(miles, 4).should.equal(expected_result);
             DistanceConverter.milesTo('Kilometres', miles, 4).should.equal(expected_result);
         });
-        
+
         it('Converts miles to feet', function () {
 
             var miles = 13;
@@ -93,7 +169,7 @@ describe('#Distance DistanceConverter works', function () {
             DistanceConverter.milesToFeet(miles, 4).should.equal(expected_result);
             DistanceConverter.milesTo('Feet', miles, 4).should.equal(expected_result);
         });
-        
+
         it('Converts miles to metres', function () {
 
             var miles = 33;
@@ -101,7 +177,7 @@ describe('#Distance DistanceConverter works', function () {
 
             DistanceConverter.milesToMetres(miles, 4).should.equal(expected_result);
             DistanceConverter.milesTo('Metres', miles, 4).should.equal(expected_result);
-        });        
+        });
 
         it('Converts miles to inches', function () {
 
@@ -132,7 +208,7 @@ describe('#Distance DistanceConverter works', function () {
             DistanceConverter.kilometresToNauticalMiles(kilometres, 4).should.equal(expected_result);
             DistanceConverter.kilometresTo('NauticalMiles', kilometres, 4).should.equal(expected_result);
         });
-        
+
         it('Converts kilometres to miles', function () {
 
             var kilometres = 15;
@@ -141,7 +217,7 @@ describe('#Distance DistanceConverter works', function () {
             DistanceConverter.kilometresToMiles(kilometres, 4).should.equal(expected_result);
             DistanceConverter.kilometresTo('Miles', kilometres, 4).should.equal(expected_result);
         });
-        
+
         it('Converts kilometres to feet', function () {
 
             var kilometres = 13;
@@ -150,7 +226,7 @@ describe('#Distance DistanceConverter works', function () {
             DistanceConverter.kilometresToFeet(kilometres, 4).should.equal(expected_result);
             DistanceConverter.kilometresTo('Feet', kilometres, 4).should.equal(expected_result);
         });
-        
+
         it('Converts kilometres to metres', function () {
 
             var kilometres = 33;
@@ -158,7 +234,7 @@ describe('#Distance DistanceConverter works', function () {
 
             DistanceConverter.kilometresToMetres(kilometres, 4).should.equal(expected_result);
             DistanceConverter.kilometresTo('Metres', kilometres, 4).should.equal(expected_result);
-        });        
+        });
 
         it('Converts kilometres to inches', function () {
 
