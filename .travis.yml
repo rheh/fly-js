@@ -3,8 +3,7 @@ node_js:
   - "0.12"
 script: 
   - "jshint src"
-  - "npm test"
-  - "npm run coverage"
+  - "npm test --coverage"
 git:
   depth: 10
 branches:
