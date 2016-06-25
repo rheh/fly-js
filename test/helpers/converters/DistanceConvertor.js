@@ -67,7 +67,7 @@ describe('#Distance DistanceConverter works', function () {
             DistanceConverter.nauticalMilesTo('Kilometres', nauticalMiles, 4).should.equal(expected_result);
         });
 
-        it('Converts nautical miles to kilometers', function () {
+        it('Converts nautical miles to kilometers using function call', function () {
 
             var nauticalMiles = 10;
             var expected_result = 18.52;
@@ -83,7 +83,7 @@ describe('#Distance DistanceConverter works', function () {
             DistanceConverter.nauticalMilesToFeet(nauticalMiles, 4).should.equal(expected_result);
         });
 
-        it('Converts nautical miles to feet', function () {
+        it('Converts nautical miles to feet using function call', function () {
 
             var nauticalMiles = 10;
             var expected_result = 60761.2;
@@ -99,7 +99,7 @@ describe('#Distance DistanceConverter works', function () {
             DistanceConverter.nauticalMilesTo('Metres', nauticalMiles, 4).should.equal(expected_result);
         });
 
-        it('Converts nautical miles to metres', function () {
+        it('Converts nautical miles to metres using function call', function () {
 
             var nauticalMiles = 10;
             var expected_result = 18520;
@@ -115,7 +115,7 @@ describe('#Distance DistanceConverter works', function () {
             DistanceConverter.nauticalMilesTo('Inches', nauticalMiles, 4).should.equal(expected_result);
         });
 
-        it('Converts nautical miles to inches', function () {
+        it('Converts nautical miles to inches using function call', function () {
 
             var nauticalMiles = 10;
             var expected_result = 729134;
@@ -131,7 +131,7 @@ describe('#Distance DistanceConverter works', function () {
             DistanceConverter.nauticalMilesTo('Centimetres', nauticalMiles, 4).should.equal(expected_result);
         });
 
-        it('Converts nautical miles to centimeter', function () {
+        it('Converts nautical miles to centimeter using function call', function () {
 
             var nauticalMiles = 10;
             var expected_result = 1852000;
