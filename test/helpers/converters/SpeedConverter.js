@@ -33,8 +33,8 @@ describe('#Distance SpeedConverter works', function () {
             var knots = 15;
             var expected_result = 7.7167;
 
-            SpeedConverter.knotsToMetresPerSecond(knots, 4).should.equal(expected_result);
-            SpeedConverter.knotsTo('MetresPerSecond', knots, 4).should.equal(expected_result);
+            SpeedConverter.knotsToMetersPerSecond(knots, 4).should.equal(expected_result);
+            SpeedConverter.knotsTo('MetersPerSecond', knots, 4).should.equal(expected_result);
         }); 
     });
 
@@ -63,8 +63,8 @@ describe('#Distance SpeedConverter works', function () {
             var mph = 15;
             var expected_result = 6.7056;
 
-            SpeedConverter.mphToMetresPerSecond(mph, 4).should.equal(expected_result);
-            SpeedConverter.mphTo('MetresPerSecond', mph, 4).should.equal(expected_result);
+            SpeedConverter.mphToMetersPerSecond(mph, 4).should.equal(expected_result);
+            SpeedConverter.mphTo('MetersPerSecond', mph, 4).should.equal(expected_result);
         }); 
     });
 
@@ -72,29 +72,29 @@ describe('#Distance SpeedConverter works', function () {
 
         it('Converts m/s to knots', function () {
 
-            var metresPerSecond = 10;
+            var metersPerSecond = 10;
             var expected_result = 19.4384;
 
-            SpeedConverter.mpsToKnots(metresPerSecond, 4).should.equal(expected_result);
-            SpeedConverter.mpsTo('Knots', metresPerSecond, 4).should.equal(expected_result);
+            SpeedConverter.mpsToKnots(metersPerSecond, 4).should.equal(expected_result);
+            SpeedConverter.mpsTo('Knots', metersPerSecond, 4).should.equal(expected_result);
         }); 
 
         it('Converts m/s to km/h', function () {
 
-            var metresPerSecond = 11;
+            var metersPerSecond = 11;
             var expected_result = 39.6;
 
-            SpeedConverter.mpsToKilometersPerHour(metresPerSecond, 4).should.equal(expected_result);
-            SpeedConverter.mpsTo('KilometersPerHour', metresPerSecond, 4).should.equal(expected_result);
+            SpeedConverter.mpsToKilometersPerHour(metersPerSecond, 4).should.equal(expected_result);
+            SpeedConverter.mpsTo('KilometersPerHour', metersPerSecond, 4).should.equal(expected_result);
         }); 
 
         it('Converts m/s to mph', function () {
 
-            var metresPerSecond = 15;
+            var metersPerSecond = 15;
             var expected_result = 33.5540;
 
-            SpeedConverter.mpsToMilesPerHour(metresPerSecond, 4).should.equal(expected_result);
-            SpeedConverter.mpsTo('MilesPerHour', metresPerSecond, 4).should.equal(expected_result);
+            SpeedConverter.mpsToMilesPerHour(metersPerSecond, 4).should.equal(expected_result);
+            SpeedConverter.mpsTo('MilesPerHour', metersPerSecond, 4).should.equal(expected_result);
         }); 
     });
 
