@@ -78,15 +78,15 @@ flyjs.milesTo = function (unitOfMeasurement, unitValue, roundTo) {
 };
 
 /**
-* Return unit of measurement converted from kilometres value
+* Return unit of measurement converted from kilometers value
 *
 * @param  {Number} unitOfMeasurement to convert to
-* @param  {Number} unitValue is the kilometres value one wishes to convert
+* @param  {Number} unitValue is the kilometers value one wishes to convert
 * @param  {Number} Number decimal places for rouding
-* @return {Number} Unit of measurement converted from kilometres value
+* @return {Number} Unit of measurement converted from kilometers value
 */
-flyjs.kilometresTo = function (unitOfMeasurement, unitValue, roundTo) {
-    return DistanceConverter.kilometresTo(unitOfMeasurement, unitValue, roundTo);
+flyjs.kilometersTo = function (unitOfMeasurement, unitValue, roundTo) {
+    return DistanceConverter.kilometersTo(unitOfMeasurement, unitValue, roundTo);
 };
 
 

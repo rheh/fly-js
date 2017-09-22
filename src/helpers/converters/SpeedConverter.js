@@ -22,7 +22,7 @@ SpeedConverter.prototype.knotsTo = function (unitOfMeasurement, unitValue, round
     var converterFunc = 'knotsTo' + unitOfMeasurement;
 
     if (typeof this[converterFunc] !== "function") { 
-        throw new Error('Unknown conversion');
+        throw new Error('Unknown conversion' + converterFunc);
     }
 
     return this[converterFunc](unitValue, roundTo);
@@ -36,7 +36,7 @@ SpeedConverter.prototype.knotsToKilometersPerHour = function (knots, roundTo) {
     return this.convertMultipler(knots, 1.852, roundTo);
 };
 
-SpeedConverter.prototype.knotsToMetresPerSecond = function (knots, roundTo) {
+SpeedConverter.prototype.knotsToMetersPerSecond = function (knots, roundTo) {
     return this.convertMultipler(knots, 0.514444444, roundTo);
 };
 
@@ -59,7 +59,7 @@ SpeedConverter.prototype.mphToKilometersPerHour = function (mph, roundTo) {
     return this.convertMultipler(mph, 1.60934, roundTo);
 };
 
-SpeedConverter.prototype.mphToMetresPerSecond = function (mph, roundTo) {
+SpeedConverter.prototype.mphToMetersPerSecond = function (mph, roundTo) {
     return this.convertMultipler(mph, 0.44704, roundTo);
 };
 
@@ -74,16 +74,16 @@ SpeedConverter.prototype.mpsTo = function (unitOfMeasurement, unitValue, roundTo
     return this[converterFunc](unitValue, roundTo);
 };
 
-SpeedConverter.prototype.mpsToKnots = function (metresPerSecond, roundTo) {
-    return this.convertMultipler(metresPerSecond, 1.9438444924574, roundTo);
+SpeedConverter.prototype.mpsToKnots = function (metersPerSecond, roundTo) {
+    return this.convertMultipler(metersPerSecond, 1.9438444924574, roundTo);
 };
 
-SpeedConverter.prototype.mpsToKilometersPerHour = function (metresPerSecond, roundTo) {
-    return this.convertMultipler(metresPerSecond, 3.6, roundTo);
+SpeedConverter.prototype.mpsToKilometersPerHour = function (metersPerSecond, roundTo) {
+    return this.convertMultipler(metersPerSecond, 3.6, roundTo);
 };
 
-SpeedConverter.prototype.mpsToMilesPerHour = function (metresPerSecond, roundTo) {
-    return this.convertMultipler(metresPerSecond, 2.23693629, roundTo);
+SpeedConverter.prototype.mpsToMilesPerHour = function (metersPerSecond, roundTo) {
+    return this.convertMultipler(metersPerSecond, 2.23693629, roundTo);
 };
 
 module.exports = new SpeedConverter();
