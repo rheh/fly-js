@@ -62,9 +62,9 @@ fly.nauticalMilesTo('Feet', 100000, 5);
 Returns 10000 nautical miles converted to Feet rounded to five decimal places.
 
 ```javascript
-fly.nauticalMilesTo('Meters', 100000, 5);
+fly.nauticalMilesTo('Metres', 100000, 5);
 ```
-Returns 10000 nautical miles converted to Meters rounded to five decimal places.
+Returns 10000 nautical miles converted to Metres rounded to five decimal places.
 
 ```javascript
 fly.nauticalMilesTo('Inches', 100000, 5);
@@ -72,9 +72,9 @@ fly.nauticalMilesTo('Inches', 100000, 5);
 Returns 10000 nautical miles converted to Inches rounded to five decimal places.
 
 ```javascript
-fly.nauticalMilesTo('Centimeters', 100000, 5);
+fly.nauticalMilesTo('Centimetres', 100000, 5);
 ```
-Returns 10000 nautical miles converted to Centimeters rounded to five decimal places.
+Returns 10000 nautical miles converted to Centimetres rounded to five decimal places.
 
 ## Miles
 
@@ -94,9 +94,9 @@ fly.milesTo('Feet', 100000, 5);
 Returns 10000 miles converted to Feet rounded to five decimal places.
 
 ```javascript
-fly.milesTo('Meters', 100000, 5);
+fly.milesTo('Metres', 100000, 5);
 ```
-Returns 10000 miles converted to Meters rounded to five decimal places.
+Returns 10000 miles converted to Metres rounded to five decimal places.
 
 ```javascript
 fly.milesTo('Inches', 100000, 5);
@@ -104,9 +104,9 @@ fly.milesTo('Inches', 100000, 5);
 Returns 10000 miles converted to Inches rounded to five decimal places.
 
 ```javascript
-fly.milesTo('Centimeters', 100000, 5);
+fly.milesTo('Centimetres', 100000, 5);
 ```
-Returns 10000 miles converted to Centimeters rounded to five decimal places.
+Returns 10000 miles converted to Centimetres rounded to five decimal places.
 
 ## Kilometres 
 
@@ -126,9 +126,9 @@ fly.kilometresTo('Feet', 100000, 5);
 Returns 10000 kilometres converted to Feet rounded to five decimal places.
 
 ```javascript
-fly.kilometresTo('Meters', 100000, 5);
+fly.kilometresTo('Metres', 100000, 5);
 ```
-Returns 10000 kilometres converted to Meters rounded to five decimal places.
+Returns 10000 kilometres converted to Metres rounded to five decimal places.
 
 ```javascript
 fly.kilometresTo('Inches', 100000, 5);
@@ -136,9 +136,9 @@ fly.kilometresTo('Inches', 100000, 5);
 Returns 10000 kilometres converted to Inches rounded to five decimal places.
 
 ```javascript
-fly.kilometresTo('Centimeters', 100000, 5);
+fly.kilometresTo('Centimetres', 100000, 5);
 ```
-Returns 10000 kilometres converted to Centimeters rounded to five decimal places.
+Returns 10000 kilometres converted to Centimetres rounded to five decimal places.
 
 
 
